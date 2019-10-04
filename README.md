@@ -1,10 +1,9 @@
-## Spark App 
+## Amazon Gateway y Lambda App 
 
-En este repositorio, se implementó una aplicación web con Spark desplegada en Heroku. Esta aplicación hace uso de un repositorio, antes creado, Ejercicio-1-AREP, el cual calcula la media y la desviación estándar, haciendo uso de una linked list, el cual puede encontrar en <https://github.com/acai-bjca/Ejercicio-1-AREP.git>.
+En este repositorio, se creó una API con microservicios que recibe un parámetro numérico y retorna el cuadrado del número. Para esto se utilizaron servicios de amazon: Amazon Gateway y Lamba.
+Amazon Gateway reduce la complejidad operativa ya que ejecuta API sin tener que administrar servidos y permite que la creación, publicación, mantenimiento y monitoreo de una API sea más fácil. Define los endpoints y métodos http.
 
-El link de la aplicación es: <https://sparkwebarep.herokuapp.com/>
-
-![](src/main/resources/componentes.png)
+Amazon Lambda tambien reduce la complejidad sin administrar servidores, y está muy integrado con AWS Gateway. Controla e integra los endpoints definidos en un API-Gateway.
 
 ___
 ### Insignias
