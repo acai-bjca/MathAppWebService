@@ -10,10 +10,14 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.LinkedList;
 import spark.*;
-import spark.Spark;
 import static spark.Spark.*;
+
+/**
+ * SparkWebApp Aplicación en Spark que será desplegada en AWS como un servicio EC2.
+ * Calcula el cuadrado de un numero ingresado en index.
+ * @author Amalia
+ */
 
 public class SparkWebApp {
 
@@ -90,6 +94,11 @@ public class SparkWebApp {
         return respuesta;
     }
 
+    /**
+     * getPort Retorna el puerto por defecto de heroku
+     *
+     * @return
+     */
     static int getPort() {
         if (System.getenv("PORT") != null) {
             return Integer.parseInt(System.getenv("PORT"));
@@ -97,6 +106,16 @@ public class SparkWebApp {
         return 4567; //returns default port if heroku-port isn't set (i.e.on localhost)
     }
 
+    /**
+     * calculateSquare Retorna el cuadrado del numero ingresado en el index. Lee
+     * el parámetro del request y hace uso del servicio en AWS que usa Amazon
+     * Gateway y lambda, el cual calcula y retorna el cuadrado de un número.
+     *
+     * @param request Petición enviada por cliente (navegador).
+     * @return Cuadrado del número ingresado
+     * @throws MalformedURLException excepción al leer del buffer.
+     * @throws IOException excepcion de entrada y salida.
+     */
     private static String calculateSquare(Request request) throws MalformedURLException, IOException {
         String rta = "";
         int parametro = Integer.parseInt(request.queryParams("numero"));
