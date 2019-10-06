@@ -4,15 +4,10 @@ En este repositorio, se creó una API con microservicios que recibe un parámetr
 Amazon Gateway reduce la complejidad operativa ya que ejecuta API sin tener que administrar servidos y permite que la creación, publicación, mantenimiento y monitoreo de una API sea más fácil. Define los endpoints y métodos http.
 
 Amazon Lambda tambien reduce la complejidad sin administrar servidores, y está muy integrado con AWS Gateway. Controla e integra los endpoints definidos en un API-Gateway.
-
-___
-### Insignias
-
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/31b363d5a6fe4c9b8eb2d1cd22bc9c37)](https://www.codacy.com/app/acai-bjca/Ejercicio-1-AREP?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=acai-bjca/Ejercicio-1-AREP&amp;utm_campaign=Badge_Grade)
 ___
 ### Documentación
 
-Para leer la documentación diríjase a: <https://github.com/acai-bjca/SparkWebApp/tree/master/src/main/resources/documentacion/apidocs/edu/escuelaing/arep/spark>
+Para leer la documentación diríjase a: <https://https://github.com/acai-bjca/MathAppWebService/tree/master/src/main/resources/documentacion/apidocs/eci/mathappwebservice>
 
 ___
 ### Uso del proyecto como librería
@@ -23,32 +18,40 @@ Si desea usar éste repositorio como librería en su proyecto, realice los sigui
 • Agregue la siguiente dependencia al pom de su proyecto:
 ``` xml
  <dependency>
-	<groupId>edu.escuelaing.arep</groupId>
-    <artifactId>SparkWebApp</artifactId>
+	<groupId>eci</groupId>
+    <artifactId>MathAppWebService</artifactId>
     <version>1.0-SNAPSHOT</version>
 </dependency>
 ```
 
 • Importe el proyecto en la clase que lo requiera:
-import edu.escuelaing.arep.*;
-
-___
-### Ejecutando las pruebas
-
-Para ejecutar las pruebas puede usar el comando:
->mvn package
-
+import eci.*;
 
 ___
 ### Pruebas
-Para mostrar la correcta funcionalidad de la aplicación, se realizó una prueba manual.
-Primero se ingresaron los números separados por ','.
 
-![](src/main/resources/index.png)
+A continuación se muestra el funcionamiento de la aplicación:
 
-A continuación, se puede ver el resultado generado una vez se dió clic en el botón Calcular.
+El código de la aplicación web con spark que hace uso del servicio AWS es:
+![](src/main/resources/url.png)
+![](src/main/resources/codigo.png)
 
-![](src/main/resources/calculo.png)
+Aquí se probó el funcionamiento de la aplicación localmente haciendo uso del puerto 4567:
+![](src/main/resources/inicio.png)
+![](src/main/resources/resultado.png)
+
+Una vez comprobado su funcionamiento local, se subió la aplicación a AWS como un servicio EC2.
+Como podemos ver el puerto asignado es : 23.20.205.163
+![](src/main/resources/awsEC2.png)
+Ejecución en consola de la instancia creada:
+![](src/main/resources/consola.png)
+
+En las configuraciones "inbound rules", se agregó una nueva regla que permitiera ingresar por el puerto 4567:
+![](src/main/resources/rulesInbound.png)
+ 
+Se comprobó su funcionamiento con la dirección
+![](src/main/resources/awsInicio.png)
+![](src/main/resources/awsRta.png)
 ___
 ### Construido con
 
