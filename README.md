@@ -33,7 +33,7 @@ ___
 A continuación se muestra el funcionamiento de la aplicación:
 
 El código de la aplicación web con spark que hace uso del servicio AWS es:
-![](src/main/resources/url.png)
+![](src/main/resources/url.PNG)
 ![](src/main/resources/codigo.png)
 
 Aquí se probó el funcionamiento de la aplicación localmente haciendo uso del puerto 4567:
