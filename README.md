@@ -32,6 +32,10 @@ ___
 
 A continuación se muestra el funcionamiento de la aplicación:
 
+Primero se creó la instancia de un servicio EC2 en AWS en el que se subirá la aplicación
+Como podemos ver el puerto asignado es : 23.20.205.163
+![](src/main/resources/awsEC2.png)
+
 El código de la aplicación web con spark que hace uso del servicio AWS es:
 ![](src/main/resources/url.png)
 ![](src/main/resources/codigo.png)
@@ -40,15 +44,12 @@ Aquí se probó el funcionamiento de la aplicación localmente haciendo uso del 
 ![](src/main/resources/inicio.png)
 ![](src/main/resources/resultado.png)
 
-Una vez comprobado su funcionamiento local, se subió la aplicación a AWS como un servicio EC2.
-Como podemos ver el puerto asignado es : 23.20.205.163
-![](src/main/resources/awsEC2.png)
-Ejecución en consola de la instancia creada:
-![](src/main/resources/consola.png)
-
 En las configuraciones "inbound rules", se agregó una nueva regla que permitiera ingresar por el puerto 4567:
 ![](src/main/resources/rulesInbound.png)
- 
+
+Luego se ejecutó en consola la instancia creada y se subió la aplicación spark:
+![](src/main/resources/consola.png)
+
 Se comprobó su funcionamiento con la dirección
 ![](src/main/resources/awsInicio.png)
 ![](src/main/resources/awsRta.png)
